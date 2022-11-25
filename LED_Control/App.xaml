@@ -1,9 +1,31 @@
 ﻿<Application x:Class="LED_Control.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LED_Control"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewModel="clr-namespace:LED_Control.MVVM.ViewModels"
+             xmlns:view="clr-namespace:LED_Control.MVVM.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Themes/ButtonTheme.xaml"/>
+                <ResourceDictionary Source="/Resources/Themes/LabelTheme.xaml"/>
+                <ResourceDictionary Source="/Resources/Themes/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="/Resources/Themes/WindowTheme.xaml"/>
+
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ContentControl x:Key="ContentBinding" Content="{Binding CurrentViewModel}">
+                <ContentControl.Resources>
+                    <DataTemplate DataType="{x:Type viewModel:CustomeColorSelectoreViewModel}">
+                        <view:CustomeColorSelectorView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewModel:DefaultColorSelectorViewModel}">
+                        <view:DefaultColorSelectorView/>
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

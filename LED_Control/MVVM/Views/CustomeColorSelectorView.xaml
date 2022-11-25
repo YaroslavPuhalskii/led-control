@@ -1,0 +1,169 @@
+﻿<UserControl x:Class="LED_Control.MVVM.Views.CustomeColorSelectorView"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewmodels="clr-namespace:LED_Control.MVVM.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:CustomeColorSelectoreViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="125" d:DesignWidth="321">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="255"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center">
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+
+                <Label Content="RED"
+                           FontSize="12"
+                           FontWeight="Bold"
+                           Foreground="Gray"
+                           FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetRedColorCommand}"
+                             CommandParameter="0"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="OFF"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetRedColorCommand}"
+                             CommandParameter="80"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="30%"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetRedColorCommand}"
+                             CommandParameter="160"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="60%"    
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetRedColorCommand}"
+                             CommandParameter="255"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="100%"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+
+                <Label Content="GREEN"    
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetGreenColorCommand}"
+                             CommandParameter="0"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="OFF"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetGreenColorCommand}"
+                             CommandParameter="80"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="30%"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetGreenColorCommand}"
+                             CommandParameter="160"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="60%"    
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetGreenColorCommand}"
+                             CommandParameter="255"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="100%"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Label Content="BLUE"         
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetBlueColorCommand}"
+                             CommandParameter="0"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="OFF"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetBlueColorCommand}"
+                             CommandParameter="80"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="30%"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetBlueColorCommand}"
+                             CommandParameter="160"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="60%"    
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+
+                <RadioButton Width="20"
+                             Height="20"
+                             Command="{Binding SetBlueColorCommand}"
+                             CommandParameter="255"
+                             Style="{StaticResource MaterialDesignLightRadioButton}"/>
+                <Label Content="100%"
+                       Foreground="Gray"
+                       FontFamily="/Resources/Fonts/#Poppins"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Button Grid.Column="1"
+                Background="{Binding SelectedColor}"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="60"
+                Height="70"
+                Command="{Binding CloseCommand}"
+                Click="Close"/>
+    </Grid>
+</UserControl>
+

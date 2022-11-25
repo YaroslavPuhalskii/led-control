@@ -1,0 +1,210 @@
+﻿<UserControl x:Class="LED_Control.MVVM.Views.DefaultColorSelectorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="125" d:DesignWidth="321">
+    <Grid>
+        <Grid x:Name="ButtonColorSelector"
+              Grid.Row="1"
+              Visibility="{Binding IsButtonSelectorVisibility}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel x:Name="LeftColorButtons"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+                <StackPanel x:Name="Black"
+                        Orientation="Horizontal">
+                    <Button Width="20" Height="20"
+                        Background="#000000"
+                        Margin="70,0,0,0"
+                        Command="{Binding SetBlackColorCommand}"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Label Content="Black" FontSize="10" Foreground="Gray" FontFamily="/Resources/Fonts/#Poppins" Height="20" Width="38"/>
+                </StackPanel>
+
+                <StackPanel x:Name="White"
+                        Orientation="Horizontal"
+                        Margin="0,5,0,0">
+                    <Button Width="20" Height="20" Background="#FFFFFF"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetWhiteColorCommand}"
+                        CommandParameter="255"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Width="20" Height="20" Background="#A0A0A0"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetWhiteColorCommand}"
+                        CommandParameter="160"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Width="20" Height="20" Background="#505050"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetWhiteColorCommand}"
+                        CommandParameter="80"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Label Content="White" FontSize="10" Foreground="Gray" FontFamily="/Resources/Fonts/#Poppins" Height="20" Width="38"/>
+                </StackPanel>
+
+                <StackPanel x:Name="Red"
+                        Orientation="Horizontal"
+                        Margin="0,5,0,0">
+                    <Button Width="20" Height="20" Background="#FF0000"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetRedColorCommand}"
+                        CommandParameter="255"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Width="20" Height="20" Background="#A00000"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetRedColorCommand}"
+                        CommandParameter="160"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Width="20" Height="20" Background="#500000"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetRedColorCommand}"
+                        CommandParameter="80"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Label Content="Red" FontSize="10" Foreground="Gray" FontFamily="/Resources/Fonts/#Poppins" Height="20" Width="30"/>
+                </StackPanel>
+
+                <StackPanel x:Name="Green"
+                        Orientation="Horizontal"
+                        Margin="0,5,0,0">
+                    <Button Background="#00FF00" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetGreenColorCommand}"
+                        CommandParameter="255"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#00A000" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetGreenColorCommand}"
+                        CommandParameter="160"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#005000" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetGreenColorCommand}"
+                        CommandParameter="80"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Label Content="Green" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontFamily="/Resources/Fonts/#Poppins" Height="20" Width="40"/>
+                </StackPanel>
+
+
+            </StackPanel>
+            <StackPanel x:Name="RightColorButtons"
+                        Grid.Column="1"
+                        Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <StackPanel x:Name="Blue"
+                            Orientation="Horizontal"
+                            Margin="0,5,0,0">
+                    <Button Background="#0000FF" Width="20" Height="20"
+                            Margin="10,0,0,0"
+                            Command="{Binding SetBlueColorCommand}"
+                            CommandParameter="255"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Click="Close"/>
+                    <Button Background="#0000A0" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetBlueColorCommand}"
+                        CommandParameter="160"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#000050" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetBlueColorCommand}"
+                        CommandParameter="80"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Label Content="Blue" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontFamily="/Resources/Fonts/#Poppins" Height="20" Width="30"/>
+                </StackPanel>
+
+                <StackPanel x:Name="Yellow"
+                        Orientation="Horizontal"
+                        Margin="0,5,0,0">
+                    <Button Background="#FFFF00" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetYellowColorCommand}"
+                        CommandParameter="255"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#A0A000" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetYellowColorCommand}"
+                        CommandParameter="160"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#505000" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetYellowColorCommand}"
+                        CommandParameter="80"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Label Content="Yellow" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontFamily="/Resources/Fonts/#Poppins" Height="20" Width="40"/>
+                </StackPanel>
+
+                <StackPanel x:Name="Cyan"
+                        Orientation="Horizontal"
+                        Margin="0,5,0,0">
+                    <Button Background="#00FFFF" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetCyanColorCommand}"
+                        CommandParameter="255"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#00A0A0" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetCyanColorCommand}"
+                        CommandParameter="160"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#005050" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetCyanColorCommand}"
+                        CommandParameter="80"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Label Content="Cyan" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontFamily="/Resources/Fonts/#Poppins" Height="21" Width="35"/>
+                </StackPanel>
+
+                <StackPanel x:Name="Magenta"
+                        Orientation="Horizontal"
+                        Margin="0,5,0,0">
+                    <Button Background="#FF00FF" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetMagentaColorCommand}"
+                        CommandParameter="255"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#A000A0" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetMagentaColorCommand}"
+                        CommandParameter="160"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Button Background="#500050" Width="20" Height="20"
+                        Margin="10,0,0,0"
+                        Command="{Binding SetMagentaColorCommand}"
+                        CommandParameter="80"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="Close"/>
+                    <Label Content="Magenta" FontSize="10" Foreground="Gray" FontFamily="/Resources/Fonts/#Poppins" Height="22" Width="55"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
